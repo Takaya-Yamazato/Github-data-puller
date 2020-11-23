@@ -13,11 +13,11 @@ spec:
       name: contents-vol
       readOnly: true
       
-  - name: cloner       ## サイドカー コンテナ
+  - name: data-puller      ## data-puller
     image: yamazato758/test:0.2
     env:
     - name: CONTENTS_SOURCE_URL
-      value: "https://github.com/Takaya-Yamazato/Takaya-Yamazato-gatsby-starter-netlify-cms.git"
+      value: "https://github.com/Takaya-Yamazato/Github-data-puller.git"
     volumeMounts:
     - mountPath: /data
       name: contents-vol
