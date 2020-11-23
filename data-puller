@@ -10,6 +10,12 @@ fi
 git clone $CONTENTS_SOURCE_URL /data
 cd /data
 
+## SIGTERM受信時の処理
+save(){
+   exit 0
+}
+trap save TERM
+
 # 2回目以降は、1分ごとに変更差分を取得する
 while true
 do
