@@ -1,0 +1,7 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nuocw
+spec:
+  type: ExternalName
+  externalName: ocw.nagoya-u.jp
