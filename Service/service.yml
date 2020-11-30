@@ -4,7 +4,7 @@ kind: Service
 
 # サービスの名前を指定します。
 metadata:
-  name: service
+  name: web-sservice
 
 # spec: サービスの仕様を記述します。
 spec:
