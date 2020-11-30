@@ -1,0 +1,27 @@
+## Github-data-puller
+#
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-datapuller
+spec:
+  containers:          ## メイン コンテナ
+  - name: web
+    image: nginx
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html
+      name: contents-vol
+      readOnly: true
+      
+  - name: data-puller      ## data-puller
+    image: yamazato758/test:0.2
+    env:
+    - name: CONTENTS_SOURCE_URL
+      value: "https://github.com/Takaya-Yamazato/Github-data-puller.git"
+    volumeMounts:
+    - mountPath: /data
+      name: contents-vol
+      
+  volumes:             ## 共有ボリューム
+  - name: contents-vol
+    emptyDir: {}

@@ -1,0 +1,31 @@
+apiVersion: v1
+# kind: サービスを指定します。
+kind: Service
+
+# サービスの名前を指定します。
+metadata:
+  name: service
+
+# spec: サービスの仕様を記述します。
+spec:
+
+  # クライアントからのリクエストをこのラベルと一致するポッドへ送ります。
+  # selectorのラベル（app: web）とポッドテンプレートのラベル（app: web）は一致させなければなりません。
+  selector:
+    app: web
+
+  # サービスによって公開されるポートの仕様を記述します。
+  ports:
+
+  # ポートが1つの場合は省略可。複数の場合は必須であり、各ポートの名前はサービススペック内でユニークでなければならない。
+  - name: webserver
+
+    # TCP もしくは UDP が指定できる。省略時には TCP
+    protocol: TCP
+
+    # このサービスによって公開されるポート番号（必須）ｓ
+    port: 80
+
+  # サービスの公開方法を指定。ClusterIP（省略可）、NodePort、LoadBalancer、ExternalName のいずれかを指定。
+  # type: NodePort
+  type: LoadBalancer
