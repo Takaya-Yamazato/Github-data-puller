@@ -8,7 +8,7 @@ data:
   config: |
     address-pools:
     # 名前をつける
-    - name: my-ip-space
+    - name: web-service
       # プロトコルを指定（bgp or layer2）
       protocol: layer2
       # 自分の環境に合わせて設定してください

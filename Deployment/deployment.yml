@@ -28,5 +28,5 @@ spec:
     spec:
       containers:
       - name: nginx
-        #image: nginx:1.16
-        image: nginx #　latestは指定しない方が良い。バージョンを指定しない場合、latestになる。
+        image: nginx:1.17
+        #image: nginx #　latestは指定しない方が良い。バージョンを指定しない場合、latestになる。

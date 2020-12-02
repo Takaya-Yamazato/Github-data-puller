@@ -23,8 +23,9 @@ spec:
     # TCP もしくは UDP が指定できる。省略時には TCP
     protocol: TCP
 
-    # このサービスによって公開されるポート番号（必須）ｓ
+    # このサービスによって公開されるポート番号（必須）
     port: 80
+    targetPort: 80
 
   # サービスの公開方法を指定。ClusterIP（省略可）、NodePort、LoadBalancer、ExternalName のいずれかを指定。
   # type: NodePort
