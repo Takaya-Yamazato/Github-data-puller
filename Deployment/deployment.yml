@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+# kind: デプロイメントを指定します
+kind: Deployment
+
+# デプロイメントの名前を指定します
+metadata:
+  name: web-deploy
+
+# spec: デプロイメントの仕様を記述します。
+spec:
+
+# ポッドテンプレート（雛形）を使って起動するポッド数（レプリカ数）を指定します。
+# この数を変更することでスケールさせることができます。
+  replicas: 3
+
+# レプリカセットとポッドテンプレートの対応づけを行います。
+# matchLabels のラベル（app: web）とポッドテンプレートのラベル（app: web）は一致させなければなりません。
+  selector:
+    matchLabels:
+      app: web
+
+# ポッドテンプレートの仕様を記述します。
+# 仕様はロールアウト機能で変更できます（バージョンアップ）    
+  template:
+    metadata:
+      labels:
+        app: web # ポッドのラベル
+    spec:
+      containers:
+      - name: nginx
+        #image: nginx:1.16
+        image: nginx #　latestは指定しない方が良い。バージョンを指定しない場合、latestになる。
