@@ -31,17 +31,6 @@ spec:
         image: nginx:1.17
         # image: nginx #　latestは指定しない方が良い。バージョンを指定しない場合、latestになる。
 ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: ocw2-service
-# spec:
-#   selector:
-#     app: liberty
-#   ports:
-#      -  port: 8090
-#         targetPort: 8090
-
 apiVersion: v1
 kind: Service
 metadata:

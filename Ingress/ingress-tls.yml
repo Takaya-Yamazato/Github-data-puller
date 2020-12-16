@@ -22,8 +22,8 @@ metadata:
 # 詳細な仕様を記述
 spec:
 
-# # SSL/TLS暗号化の設定
-# # Ingressは単一のTLSポートである443番ポートのみサポートしています。
+# SSL/TLS暗号化の設定
+# Ingressは単一のTLSポートである443番ポートのみサポートしています。
   tls:
   # 暗号化を適用するホストを指定
   - hosts:
@@ -34,7 +34,7 @@ spec:
 
 # DNSとバックエンドサービスを対応づけます。
   rules:
-# ocw1.sample.jpの設定/ と ocw1.sample.jp/apl2 とに別のサービスを対応づけます
+# ocw1.sample.jp/の設定 と ocw1.sample.jp/en とに別のサービスを対応づけます
 
  # ocw1.sample.jpの設定です
   - host: ocw1.sample.jp
