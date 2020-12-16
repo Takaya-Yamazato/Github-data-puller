@@ -11,6 +11,8 @@ metadata:
 
   # イングレスコントラｰの設定
   # https://kubernetes.io/ja/docs/concepts/services-networking/ingress/
+  # アノテーションの詳細
+  # https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/force-ssl-redirect: 'true'
